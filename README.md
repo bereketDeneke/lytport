@@ -56,7 +56,7 @@ python app.py
 ```
 ## Entity-Relationship (ER) Diagram 
 
-![ER Diagram](ER Diagram.png)
+[ER Diagram](https://github.com/asiftauhid/lytport/blob/main/ER%20diagram.png)
 
 The ER Diagram illustrates the structure of the database schema used in this project. It highlights the entities and relationships, making it easier to understand the connections between different tables. 
 
