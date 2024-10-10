@@ -7,7 +7,6 @@ class Database:
         """
         Initialize by loading environment variables and establishing the connection.
         """
-        # Load environment variables from .env file
         load_dotenv()
         self.server = os.getenv('SERVER')
         self.database = os.getenv('DATABASE')
