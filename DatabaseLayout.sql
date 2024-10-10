@@ -1,3 +1,10 @@
+-- Drop tables if they already exist
+DROP TABLE IF EXISTS Comment;
+DROP TABLE IF EXISTS Engagement;
+DROP TABLE IF EXISTS Follower;
+DROP TABLE IF EXISTS Post;
+DROP TABLE IF EXISTS User;
+
 -- Table: User
 CREATE TABLE User (
     user_id INT PRIMARY KEY,
