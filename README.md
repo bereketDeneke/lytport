@@ -28,14 +28,22 @@ We chose **SQL (Structured Query Language)** for this project due to the structu
 ## Database Setup Instructions
 
 ### 1. Database Configuration
-Create a `.env` file in the root directory of the project and add the following details:
-
-```
-DB_SERVER=<your_db_server>
-DB_NAME=<your_db_name>
-DB_USER=<your_db_username>
-DB_PASSWORD=<your_db_password>
-```
+1. Clone this repository or download the source code.
+  ```
+  git clone https://github.com/asiftauhid/lytport.git
+  ```
+2. Install the required packages:
+  ```
+  pip install -r requirements.txt
+  ```
+   
+3. Create a `.env` file in the root directory of the project and add the following details:
+  ```
+  DB_SERVER=<your_db_server>
+  DB_NAME=<your_db_name>
+  DB_USER=<your_db_username>
+  DB_PASSWORD=<your_db_password>
+  ```
 
 Replace the placeholders `<your_db_server>`, `<your_db_name>`, `<your_db_username>`, and `<your_db_password>` with your actual database connection details.
 
