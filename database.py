@@ -11,7 +11,7 @@ class Database:
         self.server = os.getenv('SERVER')
         self.database = os.getenv('DATABASE')
         self.username = os.getenv('USERNAME')
-        self.password = f'"{os.getenv('PASSWORD')}\''
+        self.password = f"{os.getenv('PASSWORD')}"
         self.port = os.getenv('PORT')
         self.connection = None
         self.connect()

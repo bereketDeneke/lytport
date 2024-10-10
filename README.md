@@ -54,3 +54,17 @@ Once the database is set up, run the application:
 ```bash
 python app.py
 ```
+## Entity-Relationship (ER) Diagram 
+
+![ER Diagram](ER Diagram.png)
+
+The ER Diagram illustrates the structure of the database schema used in this project. It highlights the entities and relationships, making it easier to understand the connections between different tables. 
+
+### Diagram Overview
+1. **User Entity**: Contains information about each Instagram user, including user ID, username, and profile details. This table is central and connected to other entities like `Post`, `Follower`, and `Engagement`.
+2. **Post Entity**: Stores information about posts made by users. Each post is linked to a user through the `user_id` foreign key.
+3. **Follower Entity**: Tracks the follower-following relationships between users. This table uses self-referencing foreign keys to establish user relationships.
+4. **Engagement Entity**: Represents different types of engagements, such as likes and shares, associated with each post. The `engagement_type` field identifies the nature of each engagement.
+5. **Comment Entity**: Stores comments on each post. The `comment_id` is unique for each comment, and the `post_id` establishes the relationship with the `Post` entity.
+
+This structure allows for efficient querying and analysis of user activity and engagements, forming the basis of the recommendation system for content suggestions and analytics.
