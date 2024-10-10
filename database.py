@@ -11,7 +11,9 @@ class Database:
         self.server = os.getenv('SERVER')
         self.database = os.getenv('DATABASE')
         self.username = os.getenv('USERNAME')
-        self.password = os.getenv('PASSWORD')
+        self.password = f'"{os.getenv('PASSWORD')}\''
+        self.port = os.getenv('PORT')
+        print(self.port, self.password)
         self.connection = None
         self.connect()
 
@@ -20,7 +22,7 @@ class Database:
         Establish connection to the SQL Server database.
         """
         try:
-            connection_string = f'DRIVER={{SQL Server}};SERVER={self.server};DATABASE={self.database};UID={self.username};PWD={self.password}'
+            connection_string = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={self.server},{self.port};DATABASE={self.database};UID={self.username};PWD={self.password}"
             self.connection = pyodbc.connect(connection_string)
             print("Connection successful!")
         except Exception as e:
