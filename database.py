@@ -25,13 +25,14 @@ class Database:
             print("Connection successful!")
         except Exception as e:
             print(f"Error connecting to the database: {e}")
+            exit(0)
 
     def execute_query(self, query, params=None):
         """
         Execute a query that does not return a result set (INSERT, UPDATE, DELETE).
         """
+        cursor = self.connection.cursor()
         try:
-            cursor = self.connection.cursor()
             if params:
                 cursor.execute(query, params)
             else:
