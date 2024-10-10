@@ -1,0 +1,6 @@
+post_id,user_id,media_type,media_url,caption,timestamp
+101,1,image,link1.com,Reached 3000 followers!,2024-01-01 10:00
+102,2,video,link2.com,How to spend 50 AED viral,2024-01-02 12:30
+103,3,image,link3.com,Celebrating our latest reel,2024-01-03 15:45
+104,4,video,link4.com,Amazing stories posted!,2024-01-04 18:00
+105,5,image,link5.com,Reels and stories galore!,2024-01-05 09:20

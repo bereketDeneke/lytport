@@ -1,0 +1,6 @@
+user_id,username,bio,followers_count,following_count,location,is_influential
+1,user1,Bio of user1,150,300,UAE,True
+2,user2,Bio of user2,200,400,USA,False
+3,user3,Bio of user3,250,500,UK,False
+4,user4,Bio of user4,100,250,Canada,True
+5,user5,Bio of user5,175,350,Germany,False
