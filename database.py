@@ -13,7 +13,6 @@ class Database:
         self.username = os.getenv('USERNAME')
         self.password = f'"{os.getenv('PASSWORD')}\''
         self.port = os.getenv('PORT')
-        print(self.port, self.password)
         self.connection = None
         self.connect()
 
