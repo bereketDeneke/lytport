@@ -1,0 +1,6 @@
+comment_id,post_id,user_id,message,like_count,timestamp
+301,101,2,Great post!,10,2024-01-01 11:00
+302,102,3,Loved this content!,12,2024-01-02 13:00
+303,103,4,Amazing reel!,15,2024-01-03 16:30
+304,104,5,So inspiring!,8,2024-01-04 19:00
+305,105,1,Keep it up!,11,2024-01-05 10:00

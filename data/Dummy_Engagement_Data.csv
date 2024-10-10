@@ -1,0 +1,6 @@
+engagement_id,post_id,likes_count,comments_count,shares_count,video_completion_rate
+201,101,50,5,12,0.85
+202,102,75,8,15,0.9
+203,103,90,10,18,0.8
+204,104,60,6,10,0.75
+205,105,80,7,20,0.88
