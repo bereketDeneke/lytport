@@ -1,5 +1,4 @@
 from database import Database
-
 db = Database()
 
 #todo: we intitialize our tables here

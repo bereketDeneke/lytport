@@ -1,4 +1,4 @@
 __pycache__/
 menv/
 .env
-.venv/
+test.py
