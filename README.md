@@ -28,14 +28,22 @@ We chose **SQL (Structured Query Language)** for this project due to the structu
 ## Database Setup Instructions
 
 ### 1. Database Configuration
-Create a `.env` file in the root directory of the project and add the following details:
-
-```
-DB_SERVER=<your_db_server>
-DB_NAME=<your_db_name>
-DB_USER=<your_db_username>
-DB_PASSWORD=<your_db_password>
-```
+1. Clone this repository or download the source code.
+  ```
+  git clone https://github.com/asiftauhid/lytport.git
+  ```
+2. Install the required packages:
+  ```
+  pip install -r requirements.txt
+  ```
+   
+3. Create a `.env` file in the root directory of the project and add the following details:
+  ```
+  DB_SERVER=<your_db_server>
+  DB_NAME=<your_db_name>
+  DB_USER=<your_db_username>
+  DB_PASSWORD=<your_db_password>
+  ```
 
 Replace the placeholders `<your_db_server>`, `<your_db_name>`, `<your_db_username>`, and `<your_db_password>` with your actual database connection details.
 
@@ -54,3 +62,17 @@ Once the database is set up, run the application:
 ```bash
 python app.py
 ```
+## Entity-Relationship (ER) Diagram 
+
+[ER Diagram](https://github.com/asiftauhid/lytport/blob/main/ER%20diagram.png)
+
+The ER Diagram illustrates the structure of the database schema used in this project. It highlights the entities and relationships, making it easier to understand the connections between different tables. 
+
+### Diagram Overview
+1. **User Entity**: Contains information about each Instagram user, including user ID, username, and profile details. This table is central and connected to other entities like `Post`, `Follower`, and `Engagement`.
+2. **Post Entity**: Stores information about posts made by users. Each post is linked to a user through the `user_id` foreign key.
+3. **Follower Entity**: Tracks the follower-following relationships between users. This table uses self-referencing foreign keys to establish user relationships.
+4. **Engagement Entity**: Represents different types of engagements, such as likes and shares, associated with each post. The `engagement_type` field identifies the nature of each engagement.
+5. **Comment Entity**: Stores comments on each post. The `comment_id` is unique for each comment, and the `post_id` establishes the relationship with the `Post` entity.
+
+This structure allows for efficient querying and analysis of user activity and engagements, forming the basis of the recommendation system for content suggestions and analytics.
