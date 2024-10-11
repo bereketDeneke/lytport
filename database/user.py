@@ -3,7 +3,7 @@ from database.database import BaseTable
 class User(BaseTable):
     def __init__(self, drop=False):
         super().__init__()
-        self.table_name = 'users'  # Renamed from 'user' to 'users'
+        self.table_name = 'users'
         self.execute_query("SET FOREIGN_KEY_CHECKS = 0;")
         
         if drop:
