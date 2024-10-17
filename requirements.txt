@@ -2,3 +2,4 @@ python-dotenv
 sqlalchemy
 pymysql
 pandas
+fastapi
