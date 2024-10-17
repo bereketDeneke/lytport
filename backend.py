@@ -127,6 +127,7 @@ def get_all_users(limit: Optional[int] = 10):
 def get_user(user_id: int):
     try:
         user = user_table.read_by_id(user_id)
+       
         if not user:
             raise HTTPException(status_code=404, detail=f"User with ID {user_id} not found")
         return user
@@ -137,7 +138,7 @@ def get_user(user_id: int):
 @app.post("/users/", response_model=UserModel)
 def create_user(user: UserModel):
     try:
-        user_table.write(user.username, user.bio, user.followers_count, user.following_count, user.location, user.is_influential)
+        user_table.write(user.user_id,user.username, user.bio, user.followers_count, user.following_count, user.location, user.is_influential)
         return user
     except IntegrityError as e:
         raise HTTPException(status_code=400, detail="User with this username already exists")
