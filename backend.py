@@ -11,6 +11,11 @@ from database.database import Database
 
 app = FastAPI()
 
+# todo: hanlding d/t scenarios: cheacking for existing data to avoid data duplication/collision
+#           :user Table: user_name is unique
+            # the rest of the tables they have their own unique ID 
+ 
+
 # Post model for request/response
 class PostModel(BaseModel):
     user_id: int
@@ -115,6 +120,8 @@ def get_all_users(limit: Optional[int] = 10):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
+
+# [urgent] todo: create a postman request for this one
 # 2. Retrieve a single user by ID
 @app.get("/users/{user_id}", response_model=UserModel)
 def get_user(user_id: int):
@@ -159,6 +166,8 @@ def update_user(user_id: int, updated_user: updateModel):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
+
+# [urgent] todo: create a postman request for this one
 # 5. Delete a user by ID
 @app.delete("/users/{user_id}")
 def delete_user(user_id: int):
