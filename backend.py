@@ -138,6 +138,10 @@ def get_user(user_id: int):
 @app.post("/users/", response_model=UserModel)
 def create_user(user: UserModel):
     try:
+         # Check if the username already exists
+        if user_table.check_username_exists(user.username):
+            raise HTTPException(status_code=400, detail="Username already taken")
+        
         user_table.write(user.user_id,user.username, user.bio, user.followers_count, user.following_count, user.location, user.is_influential)
         return user
     except IntegrityError as e:

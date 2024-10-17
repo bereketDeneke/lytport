@@ -97,3 +97,9 @@ class User(BaseTable):
 
     def drop_table(self):
         self.execute_query(f"DROP TABLE IF EXISTS `{self.table_name}`;")
+
+    def check_username_exists(self, username: str):
+        query = f"SELECT * FROM `{self.table_name}` WHERE `username` = :username;"
+        params = {'username': username}
+        result = self.fetch_query(query, params)
+        return bool(result)  # Returns True if username exists, otherwise False
