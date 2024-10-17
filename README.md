@@ -76,3 +76,135 @@ The ER Diagram illustrates the structure of the database schema used in this pro
 5. **Comment Entity**: Stores comments on each post. The `comment_id` is unique for each comment, and the `post_id` establishes the relationship with the `Post` entity.
 
 This structure allows for efficient querying and analysis of user activity and engagements, forming the basis of the recommendation system for content suggestions and analytics.
+
+# API Documentation
+
+Why is the API useful for the project?
+
+The API is useful for the project because it allows us to interact with the database and perform CRUD operations on the data. We can use the API to create new users, get user by ID, get all users, update user by ID, delete user by ID. In other iterations, we will add more endpoints to the API to perform CRUD operations on the other entities. and thus we can give the client the ability to acccess the data and perform operations on the data easier and faster. 
+
+### How to run the API
+
+after installing the requirements, run the following command to start the server:
+```
+uvicorn backend:app --reload
+```
+now the server is running on http://localhost:8000/ 
+
+
+## Endpoints
+
+### 1. Create a new user
+
+**POST** `/users/`
+
+**Request Body**:
+```
+{
+    "username": "new_user",
+    "bio": "This is a test bio",
+    "followers_count": 100,
+    "following_count": 200,
+    "location": "New York",
+    "is_influential": true
+}
+```
+
+**Response**:
+```
+{
+    "user_id": 1,
+    "username": "new_user",
+    "bio": "This is a test bio",
+    "followers_count": 100,
+    "following_count": 200,
+    "location": "New York",
+    "is_influential": true
+}
+```
+
+### 2. Get user by ID
+
+**GET** `/users/{user_id}`
+
+**Response**:
+```
+{
+    "user_id": 1,
+    "username": "new_user",
+    "bio": "This is a test bio",
+    "followers_count": 100,
+    "following_count": 200,
+    "location": "New York",
+    "is_influential": true
+}
+```
+
+### 3. Get all users
+
+**GET** `/users/?limit=10`
+
+**Response**:
+```
+[
+    {
+        "user_id": 1,
+        "username": "new_user",
+        "bio": "This is a test bio",
+        "followers_count": 100,
+        "following_count": 200,
+        "location": "New York",
+        "is_influential": true
+    },
+    {
+        "user_id": 2,
+        "username": "new_user2",
+        "bio": "This is a test bio2",
+        "followers_count": 200,
+        "following_count": 300,
+        "location": "New York2",
+        "is_influential": true
+    }
+    ...
+]
+```
+
+### 4. Update user by ID
+
+**PUT** `/users/{user_id}`
+
+**Request Body**:
+```
+{
+    "username": "updated_user",
+    "bio": "This is an updated bio",
+    
+}
+```
+
+**Response**:
+```
+{
+    "user_id": 1,
+    "username": "updated_user",
+    "bio": "This is an updated bio"
+}
+```
+
+### 5. Delete user by ID
+
+**DELETE** `/users/{user_id}`
+
+**Response**:
+```
+{
+    "message": "User deleted successfully"
+}
+```
+
+postman workspace link : https://lytport.postman.co/workspace/lytport-Workspace~74aea609-4b7f-4d51-8e01-93e421a00dd9/request/13199683-174130b7-1bbf-4529-91fa-c330e960304b?action=share&creator=39096649&ctx=documentation
+
+Here is a video that shows the API in action on Postman: 
+
+
+
