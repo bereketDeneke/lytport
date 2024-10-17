@@ -60,6 +60,7 @@ def load_users_from_csv(file_path):
 
     for _, row in data_df.iterrows():
         user_db.write(
+            user_id=row['user_id'],
             username=row['username'], 
             bio=row['bio'], 
             followers_count=row['followers_count'], 
@@ -111,7 +112,7 @@ def load_engagements_from_csv(file_path):
     print(f"Loaded {len(data_df)} records into the Engagement table.")
 
 def main():
-    drop_tables_in_order()
+    # drop_tables_in_order()
 
     # Load data into each table from the corresponding CSV file
     load_users_from_csv('data/Dummy_Users_Data.csv')
