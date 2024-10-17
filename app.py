@@ -60,7 +60,7 @@ def load_users_from_csv(file_path):
 
     for _, row in data_df.iterrows():
         user_db.write(
-            user_id=row['user_id'],
+            user_id=int(row['user_id']) + 8,
             username=row['username'], 
             bio=row['bio'], 
             followers_count=row['followers_count'], 
@@ -76,7 +76,7 @@ def load_posts_from_csv(file_path):
 
     for _, row in data_df.iterrows():
         post_db.write(
-            user_id=row['user_id'], 
+            user_id=int(row['user_id']) + 8, 
             media_type=row['media_type'], 
             media_url=row['media_url'], 
             caption=row['caption']
@@ -91,7 +91,7 @@ def load_comments_from_csv(file_path):
     for _, row in data_df.iterrows():
         comment_db.write(
             post_id=row['post_id'], 
-            user_id=row['user_id'], 
+            user_id=int(row['user_id']) + 8, 
             message=row['message'], 
             like_count=row['like_count']
         )
