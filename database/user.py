@@ -48,7 +48,16 @@ class User(BaseTable):
     def read(self):
         query = f"SELECT * FROM `{self.table_name}`;"
         return self.fetch_query(query)
+    
+    def read_all(self, limit):
+        query = f"SELECT user_id,username, bio, followers_count, following_count, location, is_influential FROM `{self.table_name}` LIMIT {limit};"
+        return self.fetch_query(query)
+    
+    def read_by_id(self, user_id:str):
+        query = f"SELECT * FROM `{self.table_name}` WHERE `user_id`={user_id};"
+        return self.fetch_query(query)
 
+    # todo: expend the parameters to update all of the rest attributes except the userID
     def update(self, user_id, username=None, bio=None):
         query = f"""
         UPDATE `{self.table_name}` SET 
