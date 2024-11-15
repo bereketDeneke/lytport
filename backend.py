@@ -11,7 +11,7 @@ from database.database import Database
 
 app = FastAPI()
 
-# todo: hanlding d/t scenarios: cheacking for existing data to avoid data duplication/collision
+# todo: hanlding d/t scenarios: checking for existing data to avoid data duplication/collision
 #           :user Table: user_name is unique
             # the rest of the tables they have their own unique ID 
  
